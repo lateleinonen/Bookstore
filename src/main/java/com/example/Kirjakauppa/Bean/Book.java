@@ -6,7 +6,7 @@ public class Book {
 	private String isbn;
 	private long year;
 	private double price;
-
+	//testi
 	public Book() {
 		super();
 		this.author = null;
