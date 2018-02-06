@@ -1,4 +1,4 @@
-package com.example.Kirjakauppa.Bean;
+package com.example.Bookstore.Bean;
 
 import java.util.List;
 
