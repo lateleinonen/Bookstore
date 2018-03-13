@@ -19,6 +19,16 @@ public class BookController {
 	@Autowired
 	private BookRepository repository;
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		return "login";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Model model) {
+		return "login";
+	}
+	
 	@RequestMapping("/index")
 	public String bStore(Model model) {
 		model.addAttribute("books", repository.findAll());
@@ -36,7 +46,7 @@ public class BookController {
 		repository.save(book);
 		return "redirect:index";
 	}
-
+	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteBook(@PathVariable("id") Long bookId, Model model) {
 		repository.delete(bookId);
